@@ -18,12 +18,24 @@ const User = (props) => {
     const { user } = props;
   
     return (
-        <div className="address-card">
-            <img className="img" src={user.picture.large} alt={user.name.first}/>           
-                <h3 className="title">{`${user.name.first} ${user.name.last}`}</h3>
-                {infoReveal ? <ExpandInfo user={user} /> : ''}
-                <button className="more_btn" onClick={showInfo}>{moreBtn}</button>
+        // <div className="address-card">
+        //     <img className="img" src={user.picture.large} alt={user.name.first}/>           
+        //         <h3 className="title">{`${user.name.first} ${user.name.last}`}</h3>
+        //         {infoReveal ? <ExpandInfo user={user} /> : ''}
+        //         <button className="more_btn" onClick={showInfo}>{moreBtn}</button>
+        // </div>
+        <article>
+        <img className="img" src={user.picture.large} alt={user.name.first}/>
+        <div className="text">
+            <h3 className="title">{`${user.name.first} ${user.name.last}`}</h3>
+          
+          {/* <div className='text'>
+            <p>{this.props.singleBeer.description}</p>
+          </div> */}
+          {infoReveal ? <ExpandInfo user={user} /> : ''}
+          <button className="more_btn" onClick={showInfo}>{moreBtn}</button>
         </div>
+      </article>
   )
 }
 
